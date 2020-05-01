@@ -1,0 +1,27 @@
+\documentclass{article}
+
+\begin{document}
+
+\title{Evaluating Projection onto Basis Functions using L2}
+\author{Jackson Woodruff}
+
+\maketitle
+
+In this document, we describe the evaluation setup for the idea
+of embedding behaviour of functions into a vectorspace
+indexed by other functions.
+
+We create a system, that given an input function $g:\texttt{list[int]} \rightarrow \texttt{list[int]}$, projects $g$ onto a set of
+functions, $f_i$.  The $f_i$, $g$ should be written in Python.
+
+We use L2 to generate the conversion functions.  The
+\texttt{classify.sh} script generates input files for L2 and
+runs the L2 generator.
+
+\section{Structure}
+The basis functions are in the \texttt{basis\_functions} folder.
+
+Input can be classified by running
+\texttt{classify.sh <input function file>.py}.
+
+\end{document}
