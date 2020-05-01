@@ -14,3 +14,4 @@ __pycache__/
 # Vagrant
 .vagrant/
 *.install
+synthesisfolder
