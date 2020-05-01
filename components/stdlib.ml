@@ -204,3 +204,9 @@ let abs x =
 
 let even x = x % 2 = 0
 let odd x = not (even x)
+
+let rec newzip = fun xs ys ->
+  let rec helper = fun xs ->
+    if xs = [] then [] else
+      car (car xs) :: helper (cdr xs)
+  in map (zip xs ys) helper
