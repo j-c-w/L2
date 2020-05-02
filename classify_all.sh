@@ -10,6 +10,7 @@ shift
 
 while [[ $# -gt 0 ]]; do
 	input=$1
+	shift
 
 	# Need to keep each output folder unique wrt. each input folder.
 	./classify.sh $input ${output}${input}
