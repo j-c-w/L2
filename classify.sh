@@ -19,4 +19,4 @@ synthesis_files=( $(find $outputdir -name '*.json') )
 
 echo "Synthesis examples generated! Starting the synthesizer!"
 echo "Synthesizing ${#synthesis_files} files"
-parallel --dry-run ./_build/default/bin/l2_cli.exe synth {} '>' {}.synth_output ::: ${synthesis_files[@]}
+parallel ./_build/default/bin/l2_cli.exe synth {} '>' {}.synth_output ::: ${synthesis_files[@]}
