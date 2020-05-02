@@ -11,6 +11,8 @@ fi
 
 inputfile=$1
 outputdir=$2
+# Give 24 hours to synthesize each component:
+TIMEOUT_LEN=86400
 
 mkdir -p $outputdir
 python3 generate_examples.py $inputfile $outputdir
@@ -19,4 +21,4 @@ synthesis_files=( $(find $outputdir -name '*.json') )
 
 echo "Synthesis examples generated! Starting the synthesizer!"
 echo "Synthesizing ${#synthesis_files} files"
-parallel ./_build/default/bin/l2_cli.exe synth {} '>' {}.synth_output ::: ${synthesis_files[@]}
+parallel timeout $TIMEOUT_LEN ./_build/default/src/l2.exe {} '>' {}.synth_output ::: ${synthesis_files[@]}
